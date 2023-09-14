@@ -27,7 +27,7 @@ public class Centro implements Mostrable {
         	this.diagnosticosPorSeveridad.add(diagnosticos.get(i));
 		}
 		 
-		 
+ 
 	}
 
 	@Override
@@ -38,26 +38,21 @@ public class Centro implements Mostrable {
 			System.out.println("SEVERIDAD : " + diagnostico.getSeveridad());
 			System.out.println(diagnostico);
 		}
-		
+
+		 /*
+		  * Si la coleccion de diagnosticos fuese mayor esto tambien se podria realizar utilizando un stream   	
+		  * diagnosticosPorSeveridad.stream()
+		  * .map(diagnostico->diagnostico.getSeveridad())
+		  * .forEach(diagnostico->System.out.println(diagnostico));
+		  * 
+		  */
 	}
 	private void mostrarEvaluaciones() {
+		
 		this.diagnosticosPorSeveridad.forEach(diagnostico->diagnostico.mostrarEvaluaciones());
 	}
 	
-
-	//TODO completar aquí estructuras/variables necesarias
-	
-	
-	//TODO desarrollar constructor
-	
-	
-	//TODO agregar diagnósticos a la estructura correspondiente;
-	
-	
-	//TODO controlar nombre vacío o nulo;
-	
-	
-	//TODO implementar método mostrar;
+ 
 }
 	
 	
