@@ -5,7 +5,18 @@ import java.util.List;
 import ar.edu.ort.tp1.tdas.implementaciones.ListaOrdenadaNodos;
 
 public class ListaOrdenadaDiagnosticos extends ListaOrdenadaNodos<Severidad, Diagnostico> {
-
+ 	/*
+	 * Se podria prescindir de esta clase(lo solicitado por la institucion academica es utilizarla) 
+         * guardando los diagnosticos en un arrayList
+	 * e invocando al metodo sort como 
+	 * listaDiagnosticos.sort((Diagnostico diagnostico1, Diagnostico diagnostico2)-> diagnostico1.getSeveridad().ordinal-diagnostico2.getSeveridad().ordinal);
+	 * Si la coleccion de diagnosticos fuese mayor incluso quizas seria mas eficiente utilizar un stream
+	 * como sigue :
+	 *  List<Diagnostico> diagnosticos;
+		List<Diagnostico> diagnosticosOrdenadosPorSeveridad= diagnosticos.stream()
+		 .sorted((Diagnostico diagnostico1, Diagnostico diagnostico2)-> diagnostico1.getSeveridad().ordinal()-diagnostico2.getSeveridad().ordinal())
+		 .toList();
+	 */
 	ListaOrdenadaDiagnosticos() {
 	}
 	@Override
