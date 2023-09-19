@@ -3,7 +3,11 @@ package ar.edu.ort.tp1.examen.modeloClases;
 import java.util.List;
 
 import ar.edu.ort.tp1.tdas.interfaces.Mostrable;
-
+/*
+	 *  No es lo solicitado, pero quizas seria mas conveniente que en esta y otras clases
+  se utilizen modificadores final para minimizar la mutabilidad
+ 
+	 */
 public class Centro implements Mostrable {
     private static final String NOMBRE_INVALIDO = "El nombre del Centro no puede estar vacio ni ser nulo";
 	private String nombre;
