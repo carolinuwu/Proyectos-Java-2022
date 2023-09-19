@@ -2,6 +2,12 @@ package ar.edu.ort.tp1.examen.modeloClases;
 
 import ar.edu.ort.tp1.tdas.interfaces.Mostrable;
 
+/*
+	 *  No es lo solicitado, pero para esta clase quizas seria mas conveniente 
+  utilizar un record ya que no es una clase donde haya que aplicar nada de lo que se evaluaba
+
+	 */
+
 public class Paciente implements Mostrable{
 	private int nroInscripcion;
 	private String nape;
@@ -34,17 +40,5 @@ public class Paciente implements Mostrable{
 		this.mostrarEdadCronologica();
 		
 	}
-	 
-	
-	//TODO completar aquí estructuras/variables necesarias;
-	
-	
-	//TODO completar aquí constructor;
-		
-	
-	//TODO completar set edad cronológica
-    
-	
-	
-
+ 
 }
