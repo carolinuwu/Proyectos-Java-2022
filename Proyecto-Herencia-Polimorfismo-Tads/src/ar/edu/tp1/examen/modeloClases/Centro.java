@@ -40,10 +40,16 @@ public class Centro implements Mostrable {
 		}
 
 		 /*
-		  * Si la coleccion de diagnosticos fuese mayor esto tambien se podria realizar utilizando un stream   	
-		  * diagnosticosPorSeveridad.stream()
-		  * .map(diagnostico->diagnostico.getSeveridad())
-		  * .forEach(diagnostico->System.out.println(diagnostico));
+		  * Algunos autores apuntan a que las iteraciones internas son preferibles a las internas, asique sino podria utilizar esto como
+    	System.out.println("--------------------------------");
+		System.out.println("MOSTRANDO DIAGNOSTICOS ");
+		this.diagnosticosPorSeveridad.forEach(diagnostico -> {
+		    System.out.println("SEVERIDAD " + diagnostico.getSeveridad());
+		    System.out.println(diagnostico);
+		});
+		 System.out.println("-------------------");
+		
+	}
 		  * 
 		  */
 	}
@@ -51,7 +57,23 @@ public class Centro implements Mostrable {
 		
 		this.diagnosticosPorSeveridad.forEach(diagnostico->diagnostico.mostrarEvaluaciones());
 	}
-	
+/* La utilizacion de la clase ListaOrdenadaNodos fue a pedido de la institucion academica pero quizas para una coleccion  mayor seria mas performante
+utilizar un stream 
+private List<Diagnostico> generarListaOrdenadaDiagnosticos(List<Diagnostico> diagnosticos) {
+		this.diagnosticosPorSeveridad= diagnosticos.stream()
+				.sorted((diagnostico1, diagnostico2)->diagnostico2.getSeveridad().ordinal()-diagnostico1.getSeveridad().ordinal())
+				.toList();
+		return diagnosticosPorSeveridad;
+  o sino sortearla directamente si se pretende prescindir de la clase ListaOrdenadaDiagnosticos
+  private void ordenarDiagnosticos(List<Diagnostico> diagnosticos) {
+diagnosticos.sort((diagnostico1,diagnostico2)->diagnostico2.getSeveridad().ordinal()-diagnostico1.getSeveridad().ordinal())
+	 ;
+ 	 
+	}
+	}
+ 
+ * 
+ */
  
 }
 	
