@@ -11,15 +11,11 @@ public class ListaOrdenadaDiagnosticos extends ListaOrdenadaNodos<Severidad, Dia
 	 * e invocando al metodo sort como 
         *diagnosticosSinOrdenar.sort((diagnostico1,diagnostico2)->diagnostico2.getSeveridad().ordinal()-diagnostico1.getSeveridad().ordinal());
 	*inciso: siempre que no hubiesen sido cargados con List.of() u otro metodo que retornase una coleccion inmutable 
-       *     Si la coleccion de diagnosticos fuese mayor incluso quizas seria mas eficiente utilizar un stream
-	 * como sigue :
-	 *  	Map<Severidad,List<Diagnostico>> diagnosticosOrdenados = diagnosticosSinOrdenar.stream()
-			  .collect(groupingBy(Diagnostico::getSeveridad));
-     Si despues tuviese que mostrarlos :
-		diagnosticosOrdenados.forEach((Diagnostico,Severidad)->{
-			System.out.println("Severidad : " + Diagnostico);
-			System.out.println("Diagnostico : " + Severidad);
-		});
+       *    También podria agrupar los diagnosticos en un mapa por severidad por si precisase acceder a ellos acorde al tipo de severidad 
+	* Una implementacion podria ser :
+  *    Map<Severidad, List<Diagnostico>> diagnosticosOrdenados = diagnosticosSinOrdenar.stream()
+					    .sorted((diagnostico1, diagnostico2) -> diagnostico2.getSeveridad().ordinal() - diagnostico1.getSeveridad().ordinal())
+					    .collect(groupingBy(Diagnostico::getSeveridad));
 	 */
 	ListaOrdenadaDiagnosticos() {
 	}
