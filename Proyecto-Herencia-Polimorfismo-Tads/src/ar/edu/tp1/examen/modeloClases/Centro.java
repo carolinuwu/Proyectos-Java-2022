@@ -58,26 +58,17 @@ public class Centro implements Mostrable {
 		  */
 	}
 	private void mostrarEvaluaciones() {
-		
-		this.diagnosticosPorSeveridad.forEach(diagnostico->diagnostico.mostrarEvaluaciones());
+this.diagnosticosPorSeveridad.forEach(diagnostico->diagnostico.mostrarEvaluaciones());
 	}
-/* La utilizacion de la clase ListaOrdenadaNodos fue a pedido de la institucion academica pero quizas para una coleccion  mayor seria mas performante
-utilizar un stream 
-private List<Diagnostico> generarListaOrdenadaDiagnosticos(List<Diagnostico> diagnosticos) {
-		this.diagnosticosPorSeveridad= diagnosticos.stream()
-				.sorted((diagnostico1, diagnostico2)->diagnostico2.getSeveridad().ordinal()-diagnostico1.getSeveridad().ordinal())
-				.toList();
-		return diagnosticosPorSeveridad;
-  o sino sortearla directamente si se pretende prescindir de la clase ListaOrdenadaDiagnosticos
-  private void ordenarDiagnosticos(List<Diagnostico> diagnosticos) {
-diagnosticos.sort((diagnostico1,diagnostico2)->diagnostico2.getSeveridad().ordinal()-diagnostico1.getSeveridad().ordinal())
+
+	
 	 ;
  	 
 	}
 	}
  
- * 
- */
+ 
+
  
 }
 	
