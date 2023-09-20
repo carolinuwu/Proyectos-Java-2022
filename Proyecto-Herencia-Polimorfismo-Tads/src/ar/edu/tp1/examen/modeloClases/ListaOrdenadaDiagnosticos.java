@@ -7,15 +7,19 @@ import ar.edu.ort.tp1.tdas.implementaciones.ListaOrdenadaNodos;
 public class ListaOrdenadaDiagnosticos extends ListaOrdenadaNodos<Severidad, Diagnostico> {
  	/*
 	 * Se podria prescindir de esta clase(lo solicitado por la institucion academica es utilizarla) 
-         * guardando los diagnosticos en un arrayList
+         * guardando los diagnosticos en alguna implementacion de List
 	 * e invocando al metodo sort como 
-	 * listaDiagnosticos.sort((Diagnostico diagnostico1, Diagnostico diagnostico2)-> diagnostico1.getSeveridad().ordinal-diagnostico2.getSeveridad().ordinal);
-	 * Si la coleccion de diagnosticos fuese mayor incluso quizas seria mas eficiente utilizar un stream
+        *diagnosticosSinOrdenar.sort((diagnostico1,diagnostico2)->diagnostico2.getSeveridad().ordinal()-diagnostico1.getSeveridad().ordinal());
+	*inciso: siempre que no hubiesen sido cargados con List.of() u otro metodo que retornase una coleccion inmutable 
+       *     Si la coleccion de diagnosticos fuese mayor incluso quizas seria mas eficiente utilizar un stream
 	 * como sigue :
-	 *  List<Diagnostico> diagnosticos;
-		List<Diagnostico> diagnosticosOrdenadosPorSeveridad= diagnosticos.stream()
-		 .sorted((Diagnostico diagnostico1, Diagnostico diagnostico2)-> diagnostico1.getSeveridad().ordinal()-diagnostico2.getSeveridad().ordinal())
-		 .toList();
+	 *  	Map<Severidad,List<Diagnostico>> diagnosticosOrdenados = diagnosticosSinOrdenar.stream()
+			  .collect(groupingBy(Diagnostico::getSeveridad));
+     Si despues tuviese que mostrarlos :
+		diagnosticosOrdenados.forEach((Diagnostico,Severidad)->{
+			System.out.println("Severidad : " + Diagnostico);
+			System.out.println("Diagnostico : " + Severidad);
+		});
 	 */
 	ListaOrdenadaDiagnosticos() {
 	}
